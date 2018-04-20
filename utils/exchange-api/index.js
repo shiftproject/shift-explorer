@@ -74,7 +74,7 @@ module.exports = function (config) {
                 'Bittrex',
                 'https://bittrex.com/api/v1.1/public/getticker?market=BTC-SHIFT',
 				(res, cb) => {
-                    return (!res.success) ? cb(res.error) : cb(null, res.result.Last);
+                    return (!res.success || !res.result.Last) ? cb(res.error) : cb(null, res.result.Last);
                 }
             ]
 		},
