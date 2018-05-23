@@ -57,7 +57,7 @@ These programs and resources are required to install and run Shift Explorer
 Clone the Shift Explorer Repository:
 
 ```
-git clone https://github.com/humanjas/shift-explorer.git
+git clone https://github.com/shiftnrg/shift-explorer.git
 cd shift-explorer
 npm install
 ```
@@ -198,13 +198,9 @@ npm run e2e-test -s
 npm run e2e-test -s -- --specs=features/address.feature
 ```
 
-### Repository source
-<https://github.com/tjappo/shift-explorer> by Tjappo
-
-
 ## License
 
-Copyright © 2016-2017 Lisk Foundation
+Copyright © 2017-2018 Shift
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
@@ -216,7 +212,7 @@ You should have received a copy of the [GNU General Public License](https://gith
 
 This program also incorporates work previously released with lisk-explorer `1.1.0` (and earlier) versions under the [MIT License](https://opensource.org/licenses/MIT). To comply with the requirements of that license, the following permission notice, applicable to those parts of the code only, is included below:
 
-Copyright © 2017 Shift  
+Copyright © 2017-2018 Shift  
 Copyright © 2016-2017 Lisk Foundation  
 Copyright © 2015 Crypti
 
