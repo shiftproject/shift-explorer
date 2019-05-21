@@ -57,7 +57,7 @@ These programs and resources are required to install and run Shift Explorer
 Clone the Shift Explorer Repository:
 
 ```
-git clone https://github.com/shiftnrg/shift-explorer.git
+git clone https://github.com/ShiftProject/shift-explorer.git
 cd shift-explorer
 npm install
 ```
