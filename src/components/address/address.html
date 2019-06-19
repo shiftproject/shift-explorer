@@ -54,9 +54,29 @@
 								<span class="btn-copy" clip-copy="vm.address.publicKey"></span>
 							</td>
 						</tr>
+						<tr data-ng-if="vm.address.locked_balance > 0">
+							<td><strong>Total Balance</strong></td>
+							<td class="text-right">{{vm.address.total_balance | currency:$root.currency:$root.decimalPlaces}} <span class="text-muted">{{$root.currency.symbol}}</span></td>
+						</tr>						
+						<tr data-ng-if="vm.address.locked_balance > 0">
+							<td><strong>Locked Balance</strong></td>
+							<td class="text-right">{{vm.address.locked_balance | currency:$root.currency:$root.decimalPlaces}} <span class="text-muted">{{$root.currency.symbol}}</span></td>
+						</tr>
 						<tr>
-							<td><strong>Total balance</strong></td>
+							<td><strong>Available Balance</strong></td>
 							<td class="text-right">{{vm.address.balance | currency:$root.currency:$root.decimalPlaces}} <span class="text-muted">{{$root.currency.symbol}}</span></td>
+						</tr>
+						<tr data-ng-if="vm.address.locked_bytes > 0">
+							<td><strong>Locked Bytes</strong></td>
+							<td class="text-right">{{vm.address.locked_bytes}} <span class="text-muted">Bytes</span></td>
+						</tr>												
+						<tr data-ng-if="vm.address.locked_bytes > 0">
+							<td><strong>Pinned Bytes</strong></td>
+							<td class="text-right">{{vm.address.pinned_bytes}} <span class="text-muted">Bytes</span></td>
+						</tr>
+						<tr data-ng-if="vm.address.locked_bytes > 0">
+							<td><strong>Available Bytes</strong></td>
+							<td class="text-right">{{vm.address.available_bytes}} <span class="text-muted">Bytes</span></td>
 						</tr>
 						<tr>
 							<td><strong>Transactions</strong></td>

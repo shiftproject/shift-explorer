@@ -102,7 +102,6 @@
 			</div>
 		</div>
 	</div>
-
 	<div class="delegate" data-ng-if="vm.tx.votes.deleted">
 		<h2>Deleted votes <small>{{vm.tx.votes.deleted.length}}</small></h2>
 		<div class="row">
@@ -119,6 +118,47 @@
 			</div>
 		</div>
 	</div>
+
+	<div data-ng-if="vm.tx.asset.lock">
+		<h2>Locked Storage <small>{{vm.tx.asset.lock.length}}</small></h2>
+		<div class="table-responsive">
+			<table class="table summary">
+				<tbody>
+					<tr>
+						<td><strong>{{vm.tx.type == 8 ? "Locked" : "Unlocked"}} Size</strong></td>
+						<td class="text-right">{{vm.tx.asset.lock.bytes}} <span class="text-muted">Bytes</span></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div data-ng-if="vm.tx.asset.pin">
+		<h2>Pinned Data <small>{{vm.tx.asset.pin.length}}</small></h2>
+		<div class="table-responsive">
+			<table class="table summary">
+				<tbody>
+					<tr>
+						<td><strong>{{vm.tx.type == 10 ? "Pinned" : "Unpinned"}} Size</strong></td>
+						<td class="text-right">{{vm.tx.asset.pin.bytes}} <span class="text-muted">Bytes</span></td>
+					</tr>
+					<tr>
+						<td><strong>Data Hash</strong></td>
+						<td class="text-right">
+							<a href="https://storage-testnet.shiftproject.com/ipfs/{{vm.tx.asset.pin.hash}}" target="_blank">{{vm.tx.asset.pin.hash}}</a>
+						</td>
+					</tr>
+					<tr data-ng-if="vm.tx.asset.pin.parent">
+						<td><strong>Parent Transaction ID</strong></td>
+						<td class="text-right">
+							<a href="/tx/{{vm.tx.asset.pin.parent}}">{{vm.tx.asset.pin.parent}}</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
 	<h2>Details</h2>
 	<div id="table-mobile" class="table-responsive">
 		<table class="table details">

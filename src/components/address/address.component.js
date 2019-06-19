@@ -11,6 +11,21 @@ const AddressConstructor = function ($rootScope, $stateParams, $location, $http,
 			},
 		}).then((resp) => {
 			if (resp.data.success) {
+				if (resp.data.locked_balance) {
+					resp.data.total_balance = parseFloat(resp.data.balance) + parseFloat(resp.data.locked_balance);
+				} else {
+					resp.data.total_balance = resp.data.balance;
+				}
+
+				if (resp.data.locked_bytes) {
+					resp.data.available_bytes = parseFloat(resp.data.locked_bytes);
+					if (resp.data.pinned_bytes) {
+						resp.data.available_bytes -= parseFloat(resp.data.pinned_bytes);
+					}
+				} else {
+					resp.data.available_bytes = 0;
+				}
+
 				vm.address = resp.data;
 			} else {
 				throw new Error('Account was not found!');

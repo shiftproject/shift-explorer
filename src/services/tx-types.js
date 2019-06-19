@@ -9,4 +9,8 @@ AppServices.value('txTypes', {
 	5: 'Dapp registration',
 	6: 'Dapp deposit',
 	7: 'Dapp withdrawal',
+	8: 'Lock storage',
+	9: 'Unlock storage',
+	10: 'Pin data',
+	11: 'Unpin data'
 });
