@@ -102,7 +102,7 @@ Feature: Delegate Monitor
   Scenario: latest votes should link to transaction
     Given I'm on page "/delegateMonitor"
     When I click link on row no. 1 cell no. 2 of "votes" table
-    Then I should be on page "/tx/11267727202420741572"
+    Then I should be on page "/explorer/tx/11267727202420741572"
 
   Scenario: newest delegates should link to delegate
     Given I'm on page "/delegateMonitor"
@@ -112,7 +112,7 @@ Feature: Delegate Monitor
   Scenario: newest delegates should link to transaction
     Given I'm on page "/delegateMonitor"
     When I click link on row no. 1 cell no. 2 of "registrations" table
-    Then I should be on page "/tx/2535943083975103126"
+    Then I should be on page "/explorer/tx/2535943083975103126"
 
   Scenario: active delegates should link to delegate
     Given I'm on page "/delegateMonitor"
