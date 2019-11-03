@@ -70,11 +70,18 @@ module.exports = function (config) {
 			// 		return cb(null, res.BTC_LSK.last);
 			// 	},
 			// ],
-            bittrex : [
-                'Bittrex',
-                'https://bittrex.com/api/v1.1/public/getticker?market=BTC-SHIFT',
-				(res, cb) => {
-                    return (!res.success || !res.result.Last) ? cb(res.error) : cb(null, res.result.Last);
+			// bittrex : [
+			//     'Bittrex',
+			//     'https://bittrex.com/api/v1.1/public/getticker?market=BTC-SHIFT',
+			// 	(res, cb) => {
+			//         return (!res.success || !res.result.Last) ? cb(res.error) : cb(null, res.result.Last);
+			//     }
+			// ],
+            livecoin : [
+                'Livecoin',
+                'https://api.livecoin.net/exchange/ticker?currencyPair=SHIFT/BTC',
+                (res, cb) => {
+                    return (!res.last) ? cb(res.error) : cb(null, res.last);
                 }
             ]
 		},
